@@ -37,8 +37,8 @@ const saveToDatabase = async (data) => {
             const hashedPassword=item.EmpPassword;
             // console.log(item.EmpName.trim().toLowerCase())
             const user = new User({
-                empId: item.EmpID?.trim().toLowerCase(),
-                empName: item.EmpName?.trim().toLowerCase(),
+                empId: item.EmpID?.trim(),
+                empName: item.EmpName?.trim(),
                 empMobile: item.EmpMobile?.toString().trim().toLowerCase(),
                 empPassword: hashedPassword?.toString().trim().toLowerCase(),
                 empRole: item.EmpRole?.trim().toLowerCase() || 'Employee',
