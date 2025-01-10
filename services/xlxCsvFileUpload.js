@@ -33,14 +33,16 @@ const saveToDatabase = async (data) => {
 
         const savePromises = data.map(async (item) => {
             
-            const hashedPassword = await bcrypt.hash(String(item.EmpPassword), 10);
+            // const hashedPassword = await bcrypt.hash(String(item.EmpPassword), 10);
+            const hashedPassword=item.EmpPassword;
+            // console.log(item.EmpName.trim().toLowerCase())
             const user = new User({
-                empId: item.EmpID,
-                empName: item.EmpName,
-                empMobile: item.EmpMobile,
-                empPassword: hashedPassword,
-                empRole: item.EmpRole || 'Employee',
-                empEmail: item.EmpEmail || '',
+                empId: item.EmpID?.trim().toLowerCase(),
+                empName: item.EmpName?.trim().toLowerCase(),
+                empMobile: item.EmpMobile?.toString().trim().toLowerCase(),
+                empPassword: hashedPassword?.toString().trim().toLowerCase(),
+                empRole: item.EmpRole?.trim().toLowerCase() || 'Employee',
+                empEmail: item.EmpEmail?.trim().toLowerCase() || '',
             });
 
             // Save each user document using .save()

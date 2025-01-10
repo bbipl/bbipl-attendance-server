@@ -5,7 +5,9 @@ const User = require('../models/userModel');
 // Login functionality using empId or empMobile
 const userLogin = async (req, res) => {
     const { empId, empMobile, empPassword,empRole } = req.body;
-    // console.log(empRole)
+    console.log(empRole)
+    console.log(empMobile)
+    console.log(empPassword)
     try {
         // Find user by empId or empMobile
         const user = await User.findOne({
@@ -13,6 +15,7 @@ const userLogin = async (req, res) => {
         });
 
         if (!user) {
+            console.log("User not found.")
             return res.status(400).json({
                 message: 'Invalid credentials. User not found.',
             });
