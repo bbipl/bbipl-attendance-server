@@ -10,6 +10,7 @@ const PORT = process.env.PORT;
 
 const attendanceRoutes = require('./routes/attendanceRoutes');
 const userRoutes = require('./routes/userRoutes');
+const mailRouter =require("./routes/mailRouter")
 
 // Middleware
 server.use(cors());
@@ -19,6 +20,7 @@ server.use(express.urlencoded({ extended: true }));
 // Use the routes
 server.use('/api', attendanceRoutes); // Prefix the route with '/api'
 server.use('/api', userRoutes); // Prefix the route with '/api'
+server.use('/api/email', mailRouter); // Prefix the route with '/api'
 
 // Root endpoint to check if server is working fine
 server.get("/", (req, res) => {
