@@ -27,7 +27,11 @@ const userSchema = new mongoose.Schema({
     empPassword: {
         type: String,
         required: true,
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
 // Middleware to hash password before saving

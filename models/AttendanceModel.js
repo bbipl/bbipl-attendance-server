@@ -67,6 +67,10 @@ const attendanceFormSchema = new mongoose.Schema(
       type: String, // Time of the report submission
       required: true,
     },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
   },
   {
     timestamps: true, // Automatically adds createdAt and updatedAt fields
