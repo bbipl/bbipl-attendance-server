@@ -10,8 +10,9 @@ const PORT = process.env.PORT;
 
 const attendanceRoutes = require('./routes/attendanceRoutes');
 const userRoutes = require('./routes/userRoutes');
-const mailRouter =require("./routes/mailRouter")
-const formsRouter=require('./routes/formsRouter')
+const mailRouter =require("./routes/mailRouter");
+const formsRouter=require('./routes/formsRouter');
+const sitesManagementRouter=require("./routes/sitesManagementRouter")
 // Middleware
 server.use(cors());
 server.use(express.json());
@@ -22,6 +23,7 @@ server.use('/api', attendanceRoutes); // router for attendance
 server.use('/api', userRoutes); // router for users
 server.use('/api/email', mailRouter); // router for emails
 server.use('/api/forms', formsRouter); // router for forms
+server.use('/api/site-management',sitesManagementRouter ); // router for siteDetails
 
 // Root endpoint to check if server is working fine
 server.get("/", (req, res) => {

@@ -49,7 +49,7 @@ const attendanceFormSchema = new mongoose.Schema(
       type: String, // URL for the progress report video
       required: true,
     },
-    selfie: {
+    selfie: [{
         imageUrl:{
             type: String, 
             required: true,
@@ -58,7 +58,7 @@ const attendanceFormSchema = new mongoose.Schema(
             type: String,
             required: true,
         }
-    },
+    }],
     siteLocation: {
       type: String, // Location of the site
       required: true,
