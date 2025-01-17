@@ -2,7 +2,7 @@ const SiteManagement = require('../../../models/siteManagementModel');
 
 const addDistrictNameControllers = async (req, res) => {
     try {
-        console.log("I am working");
+        // console.log("I am working");
 
         const { stateId, districtName } = req.body; // Expect both stateId and districtName
 

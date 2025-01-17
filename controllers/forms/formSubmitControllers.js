@@ -1,13 +1,18 @@
-const RequirementsFormModel = require('../models/RequirementsFormModel');
+const RequirementsFormModel = require('../../models/RequirementsFormModel');
 
 const submitForm = async (req, res) => {
     try {
         const {
+            empType,
+            empName,
             empId,
             empMobile,
-            empName,
-            date,
+            state,
+            district,
+            block,
             siteName,
+            workType,
+            date,
             dateOfRequirement,
             requirementType,
             remarks,
@@ -17,11 +22,16 @@ const submitForm = async (req, res) => {
 
         // Validate required fields
         if (
+            !empType ||
+            !empName ||
             !empId ||
             !empMobile ||
-            !empName ||
-            !date ||
+            !state ||
+            !district ||
+            !block ||
             !siteName ||
+            !workType ||
+            !date ||
             !dateOfRequirement ||
             !requirementType ||
             !remarks
@@ -31,10 +41,16 @@ const submitForm = async (req, res) => {
 
         // Prepare data object with schema-compliant field names
         const data = {
+            empType,
             empId,
             empName,
-            date,
+            empMobile,
+            stateName:state,
+            districtName:district,
+            blockName:block,
             siteName,
+            workTypeName:workType,
+            date,
             dateOfRequirement,
             requirementType,
             remarks,
