@@ -61,6 +61,26 @@ const requirementsFormSchema=new mongoose.Schema({
         trim:true,
         
     },
+    expensesAmount:{
+        type:String,
+        required:true,
+        trim:true,
+    },
+    expensesType:{
+        type:String,
+        required:true,
+        trim:true,
+    },
+    paymentMethod:{
+        type:String,
+        required:true,
+        trim:true,
+    },
+    paymentStatus:{
+        type:String,
+        required:true,
+        trim:true,
+    },
     remarks:{
         type:String,
         required:true,
@@ -72,5 +92,5 @@ const requirementsFormSchema=new mongoose.Schema({
     },
 });
 
-const requirementsFormModel=mongoose.model("requirementsFormModel",requirementsFormSchema);
+const requirementsFormModel=mongoose.model("requirementsForms",requirementsFormSchema);
 module.exports=requirementsFormModel;

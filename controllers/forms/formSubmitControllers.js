@@ -15,6 +15,10 @@ const submitForm = async (req, res) => {
             date,
             dateOfRequirement,
             requirementType,
+            expensesAmount,
+            expensesType,
+            paymentMethod,
+            paymentStatus,
             remarks,
         } = req.body;
 
@@ -34,6 +38,10 @@ const submitForm = async (req, res) => {
             !date ||
             !dateOfRequirement ||
             !requirementType ||
+            !expensesAmount ||
+            !expensesType ||
+            !paymentMethod ||
+            !paymentStatus ||
             !remarks
         ) {
             return res.status(400).json({ message: "All fields are required." });
@@ -53,6 +61,10 @@ const submitForm = async (req, res) => {
             date,
             dateOfRequirement,
             requirementType,
+            expensesAmount,
+            expensesType,
+            paymentMethod,
+            paymentStatus,
             remarks,
         };
 
@@ -61,6 +73,7 @@ const submitForm = async (req, res) => {
         const result = await newFormModel.save();
 
         if (result) {
+            console.log("form saved.")
             return res.status(201).json({ message: "Form saved successfully." });
         }
 
