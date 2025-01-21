@@ -80,6 +80,7 @@ const requirementsFormSchema=new mongoose.Schema({
         type:String,
         required:true,
         trim:true,
+        enum: ['Received', 'Pending'],
     },
     remarks:{
         type:String,
