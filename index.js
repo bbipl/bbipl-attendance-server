@@ -12,7 +12,8 @@ const attendanceRoutes = require('./routes/attendanceRoutes');
 const userRoutes = require('./routes/userRoutes');
 const mailRouter =require("./routes/mailRouter");
 const formsRouter=require('./routes/formsRouter');
-const sitesManagementRouter=require("./routes/sitesManagementRouter")
+const sitesManagementRouter=require("./routes/sitesManagementRouter");
+const attendanceOfDevAndFinRouter = require("./routes/attendanceOfDevAndFinRoutes");
 // Middleware
 server.use(cors());
 server.use(express.json());
@@ -20,6 +21,7 @@ server.use(express.urlencoded({ extended: true }));
 
 // Use the routes
 server.use('/api', attendanceRoutes); // router for attendance
+server.use('/api/attendance/dev-and-fin', attendanceOfDevAndFinRouter); // router for attendance
 server.use('/api', userRoutes); // router for users
 server.use('/api/email', mailRouter); // router for emails
 server.use('/api/forms', formsRouter); // router for forms

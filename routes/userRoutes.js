@@ -11,8 +11,10 @@ const { updateContact, updateContactUsMessages } = require('../controllers/updat
 router.post('/upload-users-details', uploadFile,userFileUpload);
 router.post('/user-login', userLogin);
 router.get('/all-users', getAllUsers);
+router.get('/get-user', getAllUsers);
 router.post('/contact-us',contactUs );
 router.get('/get-contact-us-messages',getAllContactusMessages );
+router.put('/update-contact-us-messages',updateContactUsMessages );
 router.put('/update-contact-us-messages',updateContactUsMessages );
 
 

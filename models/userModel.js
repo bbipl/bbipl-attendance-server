@@ -6,27 +6,38 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+        trim:true
     },
     empName: {
         type: String,
         required: true,
+        trim:true
     },
     empMobile: {
         type: String,
         required: true,
         unique: true,
+        trim:true
     },
     empRole: {
         type: String,
         required: true,
+        trim:true
     },
     empEmail: {
         type: String,
         required: false,
+        trim:true
     },
     empPassword: {
         type: String,
         required: true,
+        trim:true
+    },
+    token: {
+        type: String,
+        required: true,
+        trim:true
     },
     createdAt: {
         type: Date,
